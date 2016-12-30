@@ -96,6 +96,11 @@ void air_carte_init(carte *c)
 	c->prop = NULL;
 }
 
+/**
+ * Retourne la valeur d'une carte
+ * @param carte *c La carte
+ * @return enum carte_enseigne La valeur de la carte
+ */
 enum carte_valeur air_carte_valeur_get(carte *c)
 {
 	carte_prop *ptr = air_carte_prop_find_type(c, cptValeur);
@@ -122,4 +127,33 @@ void air_carte_valeur_set(carte *c, enum carte_valeur valeur)
 	
 	prop->val.valeur = valeur; // On écrit la valeur
 	prop->type = cptValeur; // Et le type
+}
+
+/**
+ * Retourne l'enseigne d'une carte
+ * @param carte *c La carte
+ * @return enum carte_enseigne L'enseigne de la carte
+ */
+enum carte_enseigne air_carte_enseigne_get(carte *c)
+{
+	carte_prop *ptr = air_carte_prop_find_type(c, cptEnseigne);
+
+	if(ptr == NULL) {
+		return ceNull;
+	}
+
+	return ptr->val.enseigne;
+}
+
+void air_carte_enseigne_set(carte *c, enum carte_enseigne enseigne)
+{
+	carte_prop *prop = air_carte_prop_find_type(c, cptEnseigne);
+	
+	if(prop == NULL) {
+		prop = air_carte_prop_creer();
+		air_carte_prop_ajouter(c, prop);
+	}
+
+	prop->val.enseigne = enseigne;
+	prop->type = cptEnseigne;
 }

@@ -73,3 +73,4 @@ void air_carte_init(carte *c);
 enum carte_valeur air_carte_valeur_get(carte *c);
 void air_carte_valeur_set(carte *c, enum carte_valeur valeur);
 enum carte_enseigne air_carte_enseigne_get(carte *c);
+void air_carte_enseigne_set(carte *c, enum carte_enseigne enseigne);

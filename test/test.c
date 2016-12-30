@@ -27,7 +27,7 @@ TEST air_carte_valeur_get_should_be_cvNull(void) {
 }
 
 /**
- * La carte crée et initialisé
+ * La carte crée et initialisée
  * air_carte_valeur_set doit affecter correctement la valeur
  * et doit aussi remplacer la valeur précédente si nécessaire
  */
@@ -41,10 +41,39 @@ TEST air_carte_valeur_set_should_assign_value(void) {
 	PASS();
 }
 
+/**
+ * La carte crée et initialisée
+ * air_carte_enseigne_get doit renvoyer cvNull
+ */
+TEST air_carte_enseigne_get_should_be_ceNull(void) {
+	carte c;
+	air_carte_init(&c);
+	ASSERT_EQ(ceNull, air_carte_enseigne_get(&c));
+	PASS();
+}
+
+/**
+ * La carte crée et initialisée
+ * air_carte_enseigne_set doit affecter correctement la valeur
+ * et doit aussi remplacer la valeur précédente si nécessaire
+ */
+TEST air_carte_enseigne_set_should_assign_value(void) {
+	carte c;
+	air_carte_init(&c);
+	air_carte_enseigne_set(&c, cePique);
+	ASSERT_EQ(cePique, air_carte_enseigne_get(&c));
+	air_carte_enseigne_set(&c, ceCoeur);
+	ASSERT_EQ(ceCoeur, air_carte_enseigne_get(&c));
+	PASS();
+}
+
+
 SUITE(carte_suite) {
 	RUN_TEST(air_carte_init_should_reset_prop);
 	RUN_TEST(air_carte_valeur_get_should_be_cvNull);
 	RUN_TEST(air_carte_valeur_set_should_assign_value);
+	RUN_TEST(air_carte_enseigne_get_should_be_ceNull);
+	RUN_TEST(air_carte_enseigne_set_should_assign_value);
 }
 
 //----- main() -----//
