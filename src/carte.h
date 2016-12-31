@@ -79,3 +79,7 @@ enum carte_enseigne air_carte_enseigne_get(carte *c);
 int air_carte_enseigne_set(carte *c, enum carte_enseigne enseigne);
 bool air_carte_peut_battre(carte *c, carte *peut_battre);
 int air_carte_bat_add(carte *c, carte *peut_battre);
+
+void air_carte_printf(carte *c);
+void air_carte_affiche_valeur(enum carte_valeur valeur);
+void air_carte_affiche_enseigne(enum carte_enseigne enseigne);

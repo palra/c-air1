@@ -227,3 +227,122 @@ int air_carte_bat_add(carte *c, carte *peut_battre)
 
 	return 0;
 }
+
+/**
+ * Affiche les propriétés d'une carte sur la sortie standard
+ * @param carte *c La carte à afficher
+ */
+void air_carte_printf(carte *c)
+{
+	carte_prop *ptr = c->prop;
+	if(ptr == NULL) {
+		printf("Aucune propriété\n");
+	}
+
+	int i = 1;
+	while(ptr != NULL) {
+		printf("[%d] ", i);
+		switch(ptr->type) {
+			case cptValeur:
+				printf("Valeur = ");
+				air_carte_affiche_valeur(ptr->val.valeur);
+				break;
+			case cptEnseigne:
+				printf("Enseigne = ");
+				air_carte_affiche_enseigne(ptr->val.enseigne);
+				break;
+			case cptPeutBattre:
+				printf("Peut battre = ");
+				carte *peut_battre = ptr->val.peut_battre;
+				if(peut_battre == NULL) {
+					printf("Non défini");
+				}
+
+				air_carte_affiche_valeur(
+					air_carte_valeur_get(peut_battre)
+				);
+				printf(" de ");
+				air_carte_affiche_enseigne(
+					air_carte_enseigne_get(peut_battre)
+				);
+				break;
+			default:
+				printf("Propriété de type inconnu");
+				break;
+		}
+		
+		printf("\n");
+
+		ptr = ptr->suiv;
+		i++;
+	}
+}
+
+void air_carte_affiche_valeur(enum carte_valeur valeur)
+{
+	switch(valeur) {
+		case cvAs:
+			printf("As");
+			break;
+		case cv2:
+			printf("2");
+			break;
+		case cv3:
+			printf("3");
+			break;
+		case cv4:
+			printf("4");
+			break;
+		case cv5:
+			printf("5");
+			break;
+		case cv6:
+			printf("6");
+			break;
+		case cv7:
+			printf("7");
+			break;
+		case cv8:
+			printf("8");
+			break;
+		case cv9:
+			printf("9");
+			break;
+		case cv10:
+			printf("10");
+			break;
+		case cvValet:
+			printf("Valet");
+			break;
+		case cvDame:
+			printf("Dame");
+			break;
+		case cvRoi:
+			printf("Roi");
+			break;
+		default:
+			printf("Non défini");
+			break;
+	}
+}
+
+void air_carte_affiche_enseigne(enum carte_enseigne enseigne)
+{
+	switch(enseigne) {
+		case cePique:
+			printf("Pique");
+			break;
+		case ceCarreau:
+			printf("Carreau");
+			break;
+		case ceCoeur:
+			printf("Coeur");
+			break;
+		case ceTrefle:
+			printf("Trefle");
+			break;
+		default:
+			printf("Non défini");
+			break;
+	}
+}
