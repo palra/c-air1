@@ -1,4 +1,5 @@
 #pragma once
+#include <stdbool.h>
 
 /**
  * Définit les enseigne d'une carte
@@ -44,7 +45,7 @@ typedef struct carte {
 enum carte_prop_type {
 	cptEnseigne,
 	cptValeur,
-	cptPoints
+	cptPeutBattre // Permet d'indiquer qu'une carte peut en battre une autre
 };
 
 /**
@@ -54,8 +55,7 @@ typedef struct carte_prop {
 	union {
 		enum carte_enseigne enseigne; // Enseigne d'une carte (pique, carreaux ...)
 		enum carte_valeur valeur; // Valeur (2, 3, as, roi ...)
-		int points; // Valeur arbitraire, peut servir à stocker
-		            // les propriétés d'un jeu de carte particulier
+		carte *peut_battre; // Pointeur vers une carte que la carte courante peut battre
 	} val;
 	enum carte_prop_type type; // Champ discriminant pour savoir quel champ de l'union lire
 	struct carte_prop *suiv; // Pointeur vers la propriété suivante
@@ -64,13 +64,18 @@ typedef struct carte_prop {
 // Fonctions de manipulation de cartes
 // doc. dans carte.c
 
-carte_prop* air_carte_prop_find_type(carte *c, enum carte_prop_type type);
+carte_prop* air_carte_prop_find_type(carte_prop *ptr, enum carte_prop_type type);
 carte_prop* air_carte_prop_creer();
-void air_carte_prop_ajouter(carte *c, carte_prop *p);
-void air_carte_prop_init(carte_prop *p);
+int air_carte_prop_ajouter(carte *c, carte_prop *p);
+int air_carte_prop_init(carte_prop *p);
+
 carte* air_carte_creer();
-void air_carte_init(carte *c);
+void air_carte_free(carte *c);
+int air_carte_init(carte *c);
+
 enum carte_valeur air_carte_valeur_get(carte *c);
-void air_carte_valeur_set(carte *c, enum carte_valeur valeur);
+int air_carte_valeur_set(carte *c, enum carte_valeur valeur);
 enum carte_enseigne air_carte_enseigne_get(carte *c);
-void air_carte_enseigne_set(carte *c, enum carte_enseigne enseigne);
+int air_carte_enseigne_set(carte *c, enum carte_enseigne enseigne);
+bool air_carte_peut_battre(carte *c, carte *peut_battre);
+int air_carte_bat_add(carte *c, carte *peut_battre);

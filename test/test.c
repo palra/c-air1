@@ -67,6 +67,22 @@ TEST air_carte_enseigne_set_should_assign_value(void) {
 	PASS();
 }
 
+TEST air_carte_bat_add_should_assign_value(void) {
+	carte c1, c2, c3;
+	air_carte_init(&c1);
+	air_carte_init(&c2);
+	air_carte_init(&c3);
+
+	air_carte_bat_add(&c1, &c2);
+	ASSERT_EQ(true, air_carte_peut_battre(&c1, &c2));
+	ASSERT_EQ(false, air_carte_peut_battre(&c1, &c3));
+	air_carte_bat_add(&c1, &c3);
+	ASSERT_EQ(true, air_carte_peut_battre(&c1, &c2));
+	ASSERT_EQ(true, air_carte_peut_battre(&c1, &c3));
+
+	PASS();
+}
+
 
 SUITE(carte_suite) {
 	RUN_TEST(air_carte_init_should_reset_prop);
@@ -74,6 +90,7 @@ SUITE(carte_suite) {
 	RUN_TEST(air_carte_valeur_set_should_assign_value);
 	RUN_TEST(air_carte_enseigne_get_should_be_ceNull);
 	RUN_TEST(air_carte_enseigne_set_should_assign_value);
+	RUN_TEST(air_carte_bat_add_should_assign_value);
 }
 
 //----- main() -----//
