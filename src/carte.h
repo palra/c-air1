@@ -1,16 +1,23 @@
+/**
+ * \file carte.h
+ * \brief Définition des fonctions et types de cartes
+ * \author Loïc Payol <loicpayol@gmail.com>
+ */
+
 #pragma once
 #include <stdbool.h>
 
 /**
+ * \enum carte_enseigne
  * Définit les enseigne d'une carte
  */
-enum carte_enseigne {
+typedef enum carte_enseigne {
 	ceNull = 0,
 	cePique,
 	ceCarreau,
 	ceCoeur,
 	ceTrefle
-};
+} carte_enseigne;
 
 /**
  * Définit les valeurs d'une carte
