@@ -1,8 +1,14 @@
+/**
+ * \file test.c
+ * \brief Programme de suite de tests
+ * \author Loïc Payol <loicpayol@gmail.com>
+ * \version 0.1.0
+ */
+
 #include "greatest.h"
 #include "../src/carte.h"
 #include <stdlib.h>
 
-//----- **** SUITE(carte) ***** -----//
 
 /**
  * La carte crée et initialisée
@@ -67,6 +73,11 @@ TEST air_carte_enseigne_set_should_assign_value(void) {
 	PASS();
 }
 
+/**
+ * Les cartes crées et initialisée
+ * air_carte_bat_add doit ajouter une référence à la liste des propriétés
+ * sans remplacer les précédentes valeurs
+ */
 TEST air_carte_bat_add_should_assign_value(void) {
 	carte c1, c2, c3;
 	air_carte_init(&c1);

@@ -1,3 +1,9 @@
+/**
+ * \file carte.c
+ * \brief Fonctions de manipulation de l'entité "carte"
+ * \author Loïc Payol <loicpayol@gmail.com>
+ */
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
@@ -5,7 +11,9 @@
 #include "carte.h"
 
 /**
- * Alloue dynamiquement une carte et l'initialise
+ * \fn carte* air_carte_creer()
+ * \brief Alloue dynamiquement une carte et l'initialise
+ * \return La carte nouvellement crée
  */
 carte* air_carte_creer()
 {
@@ -20,8 +28,9 @@ carte* air_carte_creer()
 }
 
 /**
- * Libère de la mémoire une carte
- * @param carte *c La carte à libérer de la mémoire
+ * \fn void air_carte_free(carte *c)
+ * \brief Libère de la mémoire une carte
+ * \param c La carte à libérer de la mémoire
  */
 void air_carte_free(carte *c)
 {
@@ -36,19 +45,27 @@ void air_carte_free(carte *c)
 }
 
 /**
- * Alloue la mémoire pour une carte_prop et l'initialise
+ * \fn carte_prop* air_carte_prop_creer()
+ * \brief Alloue la mémoire pour une carte_prop et l'initialise
+ * \return la prorpiété nouvellement crée
  */
 carte_prop* air_carte_prop_creer()
 {
 	carte_prop *prop = malloc(sizeof(carte_prop));
+	if(prop == NULL) {
+		fprintf(stderr, "%s\n", strerror(errno));
+		exit(errno);
+	}
+
 	air_carte_prop_init(prop);
 	return prop;
 }
 
 /**
- * Initialise une carte_prop
- * @param carte_prop *p La propriété à initialiser
- * @return int 0 lorsqu'aucune erreur n'a eu lieu
+ * \fn int air_carte_prop_init(carte_prop *p)
+ * \brief Initialise une carte_prop
+ * \param p La propriété à initialiser
+ * \return 0 lorsqu'aucune erreur n'a eu lieu
  */
 int air_carte_prop_init(carte_prop *p)
 {
@@ -57,11 +74,12 @@ int air_carte_prop_init(carte_prop *p)
 }
 
 /**
- * Recherche la première propriété de type `type` dans la
- * chaîne des propriétés d'une carte donnée
+ * \fn carte_prop* air_carte_prop_find_type(carte_prop *ptr, enum carte_prop_type type)
+ * \brief Recherche la première propriété de type `type` dans la chaîne des
+ *        propriétés d'une carte donnée
  *
- * @param carte_prop *ptr La propriété à partir du quel effectuer la recherche
- * @param enum carte_prop_type type Le type à rechercher
+ * \param ptr La propriété à partir de laquelle effectuer la recherche
+ * \param type Le type à rechercher
  */
 carte_prop* air_carte_prop_find_type(carte_prop *ptr, enum carte_prop_type type)
 {
@@ -75,10 +93,11 @@ carte_prop* air_carte_prop_find_type(carte_prop *ptr, enum carte_prop_type type)
 }
 
 /**
- * Ajoute une propriété à la carte
- * @param carte *c La carte à modifier
- * @param carte_prop *p La propriété à ajouter
- * @return int 0 lorsqu'aucune erreur n'a eu lieu
+ * \fn int air_carte_prop_ajouter(carte *c, carte_prop *p)
+ * \brief Ajoute une propriété à la carte
+ * \param c La carte à modifier
+ * \param p La propriété à ajouter
+ * \return 0 lorsqu'aucune erreur n'a eu lieu
  */
 int air_carte_prop_ajouter(carte *c, carte_prop *p)
 {
@@ -100,9 +119,10 @@ int air_carte_prop_ajouter(carte *c, carte_prop *p)
 }
 
 /**
- * Initialise la structure
- * @param carte *c L'instance de la structure à initialiser
- * @return int 0 lorsqu'aucune erreur n'a eu lieu
+ * \fn int air_carte_init(carte *c)
+ * \brief Initialise la structure
+ * \param c L'instance de la structure à initialiser
+ * \return 0 lorsqu'aucune erreur n'a eu lieu
  */
 int air_carte_init(carte *c)
 {
@@ -111,9 +131,10 @@ int air_carte_init(carte *c)
 }
 
 /**
- * Retourne la valeur d'une carte
- * @param carte *c La carte
- * @return enum carte_enseigne La valeur de la carte
+ * \fn enum carte_valeur air_carte_valeur_get(carte *c)
+ * \brief Retourne la valeur d'une carte
+ * \param c La carte
+ * \return La valeur de la carte
  */
 enum carte_valeur air_carte_valeur_get(carte *c)
 {
@@ -127,10 +148,11 @@ enum carte_valeur air_carte_valeur_get(carte *c)
 }
 
 /**
- * Affecte la valeur `valeur` à la carte
- * @param carte *c L'instance de la structure à modifier
- * @param enum carte_valeur valeur La valeur à affecter
- * @return int 0 lorsqu'aucune erreur n'a eu lieu
+ * \fn int air_carte_valeur_set(carte *c, enum carte_valeur valeur)
+ * \brief Affecte la valeur `valeur` à la carte
+ * \param c L'instance de la structure à modifier
+ * \param valeur La valeur à affecter
+ * \return 0 lorsqu'aucune erreur n'a eu lieu
  */
 int air_carte_valeur_set(carte *c, enum carte_valeur valeur)
 {
@@ -147,9 +169,10 @@ int air_carte_valeur_set(carte *c, enum carte_valeur valeur)
 }
 
 /**
- * Retourne l'enseigne d'une carte
- * @param carte *c La carte
- * @return enum carte_enseigne L'enseigne de la carte
+ * \fn enum carte_enseigne air_carte_enseigne_get(carte *c)
+ * \brief Retourne l'enseigne d'une carte
+ * \param c La carte
+ * \return L'enseigne de la carte
  */
 enum carte_enseigne air_carte_enseigne_get(carte *c)
 {
@@ -163,10 +186,11 @@ enum carte_enseigne air_carte_enseigne_get(carte *c)
 }
 
 /**
- * Affecte l'enseigne `enseigne` à la carte
- * @param carte *c L'instance de la structure à modifier
- * @param enum carte_enseigne enseigne L'enseigne à affecter
- * @return int 0 lorsqu'aucune erreur n'a eu lieu
+ * \fn int air_carte_enseigne_set(carte *c, enum carte_enseigne enseigne)
+ * \brief Affecte l'enseigne `enseigne` à la carte
+ * \param c L'instance de la structure à modifier
+ * \param enseigne L'enseigne à affecter
+ * \return 0 lorsqu'aucune erreur n'a eu lieu
  */
 int air_carte_enseigne_set(carte *c, enum carte_enseigne enseigne)
 {
@@ -184,11 +208,11 @@ int air_carte_enseigne_set(carte *c, enum carte_enseigne enseigne)
 }
 
 /**
- * Vérifie si une carte peut en battre une autre
- * @param carte *c La carte "attaquante"
- * @param carte *peut_battre La carte "attaquée"
- * @return bool true si la carte attaquante peut la battre,
- *              false sinon
+ * \fn bool air_carte_peut_battre(carte *c, carte *peut_battre)
+ * \brief Vérifie si une carte peut en battre une autre
+ * \param c La carte "attaquante"
+ * \param peut_battre La carte "attaquée"
+ * \return true si la carte attaquante peut la battre, false sinon
  */
 bool air_carte_peut_battre(carte *c, carte *peut_battre)
 {
@@ -206,10 +230,11 @@ bool air_carte_peut_battre(carte *c, carte *peut_battre)
 }
 
 /**
- * Affecte à une carte une référence vers une autre carte
- * @param carte *c L'instance de la structure à modifier
- * @param carte *peut_battre La carte battue
- * @return int 0 lorsqu'aucune erreur n'a eu lieu, -1 quand
+ * \fn int air_carte_bat_add(carte *c, carte *peut_battre)
+ * \brief Affecte à une carte une référence vers une autre carte
+ * \param c L'instance de la structure à modifier
+ * \param peut_battre La carte battue
+ * \return 0 lorsqu'aucune erreur n'a eu lieu, -1 quand
  *         une erreur a eu lieu (peut_battre == NULL ou à c)
  */
 int air_carte_bat_add(carte *c, carte *peut_battre)
@@ -229,8 +254,9 @@ int air_carte_bat_add(carte *c, carte *peut_battre)
 }
 
 /**
- * Affiche les propriétés d'une carte sur la sortie standard
- * @param carte *c La carte à afficher
+ * \fn void air_carte_printf(carte *c)
+ * \brief Affiche les propriétés d'une carte sur la sortie standard
+ * \param c La carte à afficher
  */
 void air_carte_printf(carte *c)
 {
@@ -278,6 +304,11 @@ void air_carte_printf(carte *c)
 	}
 }
 
+/**
+ * \fn void air_carte_affiche_valeur(enum carte_valeur valeur)
+ * \brief Affiche la valeur passée en paramètre dans la sortie standard
+ * \param valeur La valeur à afficher
+ */
 void air_carte_affiche_valeur(enum carte_valeur valeur)
 {
 	switch(valeur) {
@@ -326,6 +357,11 @@ void air_carte_affiche_valeur(enum carte_valeur valeur)
 	}
 }
 
+/**
+ * \fn void air_carte_affiche_enseigne(enum carte_enseigne enseigne)
+ * \brief Affiche l'enseigne passée en paramètre dans la sortie standard
+ * \param valeur L'enseigne à afficher
+ */
 void air_carte_affiche_enseigne(enum carte_enseigne enseigne)
 {
 	switch(enseigne) {
