@@ -6,6 +6,7 @@
 #include "bdd.h"
 #include "carte.h"
 #include <stdlib.h>
+#include <stdio.h>
 #include <errno.h>
 
 /**
@@ -288,4 +289,27 @@ carte_liste* air_bdd_liste_recherche_attaquants(carte_liste *l, carte *c)
 	}
 
 	return res;
+}
+
+/**
+ * \fn void air_bdd_liste_printf(carte_liste *l)
+ * \brief Affiche une liste de cartes sur la sortie standard
+ * \param l La liste à afficher
+ */
+void air_bdd_liste_printf(carte_liste *l)
+{
+	if(l == NULL) {
+		return;
+	}
+
+	int i = 1;
+	carte_cell *c = l->premier;
+	while(c != NULL) {
+		printf("Carte #%d :\n", i++);
+
+		air_carte_printf(c->c);
+		printf("\n");
+
+		c = c->suiv;
+	}
 }

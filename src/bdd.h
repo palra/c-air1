@@ -41,4 +41,4 @@ carte_liste* air_bdd_liste_recherche_par_valeur(carte_liste *l, enum carte_valeu
 carte_liste* air_bdd_liste_recherche_par_enseigne(carte_liste *l, enum carte_enseigne enseigne);
 carte_liste* air_bdd_liste_recherche_attaquants(carte_liste *l, carte *c);
 
-void air_bdd_liste_afficher(carte_liste *l);
+void air_bdd_liste_printf(carte_liste *l);
