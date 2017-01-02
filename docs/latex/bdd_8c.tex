@@ -8,13 +8,14 @@ Fonctions de base de données.
 {\ttfamily \#include \char`\"{}bdd.\+h\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}carte.\+h\char`\"{}}\\*
 {\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
 {\ttfamily \#include $<$errno.\+h$>$}\\*
 Graphe des dépendances par inclusion de bdd.\+c\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=291pt]{bdd_8c__incl}
+\includegraphics[width=350pt]{bdd_8c__incl}
 \end{center}
 \end{figure}
 \subsection*{Fonctions}
@@ -41,7 +42,9 @@ int \hyperlink{bdd_8c_ab8e2391c7ec0afde492fc38ae88921fd}{air\+\_\+bdd\+\_\+liste
 \hyperlink{structcarte__liste}{carte\+\_\+liste} $\ast$ \hyperlink{bdd_8c_afb08d06e79e936cc33d88bc178288de0}{air\+\_\+bdd\+\_\+liste\+\_\+recherche\+\_\+par\+\_\+enseigne} (\hyperlink{structcarte__liste}{carte\+\_\+liste} $\ast$l, enum \hyperlink{carte_8h_a2b6a5add5e3db9028dff54f9c1acdde7}{carte\+\_\+enseigne} enseigne)
 \begin{DoxyCompactList}\small\item\em Retourne une liste des cartes ayant pour enseigne {\ttfamily enseigne} \end{DoxyCompactList}\item 
 \hyperlink{structcarte__liste}{carte\+\_\+liste} $\ast$ \hyperlink{bdd_8c_a0572860903e918c4c3f3706bfab321d2}{air\+\_\+bdd\+\_\+liste\+\_\+recherche\+\_\+attaquants} (\hyperlink{structcarte__liste}{carte\+\_\+liste} $\ast$l, \hyperlink{structcarte}{carte} $\ast$c)
-\begin{DoxyCompactList}\small\item\em Retourne la liste des cartes pouvant attaquer la carte {\ttfamily c} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Retourne la liste des cartes pouvant attaquer la carte {\ttfamily c} \end{DoxyCompactList}\item 
+void \hyperlink{bdd_8c_a4f800054489e50ab8b51e876590b56df}{air\+\_\+bdd\+\_\+liste\+\_\+printf} (\hyperlink{structcarte__liste}{carte\+\_\+liste} $\ast$l)
+\begin{DoxyCompactList}\small\item\em Affiche une liste de cartes sur la sortie standard. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Description détaillée}
@@ -162,6 +165,22 @@ Initialise une liste de cellules.
 \begin{DoxyReturn}{Renvoie}
 -\/1 en cas d\textquotesingle{}erreur (voir errno), 0 sinon 
 \end{DoxyReturn}
+\index{bdd.\+c@{bdd.\+c}!air\+\_\+bdd\+\_\+liste\+\_\+printf@{air\+\_\+bdd\+\_\+liste\+\_\+printf}}
+\index{air\+\_\+bdd\+\_\+liste\+\_\+printf@{air\+\_\+bdd\+\_\+liste\+\_\+printf}!bdd.\+c@{bdd.\+c}}
+\subsubsection[{\texorpdfstring{air\+\_\+bdd\+\_\+liste\+\_\+printf(carte\+\_\+liste $\ast$l)}{air_bdd_liste_printf(carte_liste *l)}}]{\setlength{\rightskip}{0pt plus 5cm}void air\+\_\+bdd\+\_\+liste\+\_\+printf (
+\begin{DoxyParamCaption}
+\item[{{\bf carte\+\_\+liste} $\ast$}]{l}
+\end{DoxyParamCaption}
+)}\hypertarget{bdd_8c_a4f800054489e50ab8b51e876590b56df}{}\label{bdd_8c_a4f800054489e50ab8b51e876590b56df}
+
+
+Affiche une liste de cartes sur la sortie standard. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em l} & La liste à afficher \\
+\hline
+\end{DoxyParams}
 \index{bdd.\+c@{bdd.\+c}!air\+\_\+bdd\+\_\+liste\+\_\+recherche\+\_\+attaquants@{air\+\_\+bdd\+\_\+liste\+\_\+recherche\+\_\+attaquants}}
 \index{air\+\_\+bdd\+\_\+liste\+\_\+recherche\+\_\+attaquants@{air\+\_\+bdd\+\_\+liste\+\_\+recherche\+\_\+attaquants}!bdd.\+c@{bdd.\+c}}
 \subsubsection[{\texorpdfstring{air\+\_\+bdd\+\_\+liste\+\_\+recherche\+\_\+attaquants(carte\+\_\+liste $\ast$l, carte $\ast$c)}{air_bdd_liste_recherche_attaquants(carte_liste *l, carte *c)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf carte\+\_\+liste} $\ast$ air\+\_\+bdd\+\_\+liste\+\_\+recherche\+\_\+attaquants (

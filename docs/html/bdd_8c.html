@@ -98,6 +98,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <div class="textblock"><code>#include &quot;<a class="el" href="bdd_8h_source.html">bdd.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="carte_8h_source.html">carte.h</a>&quot;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;errno.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Graphe des dépendances par inclusion de bdd.c:</div>
@@ -144,6 +145,9 @@ Fonctions</h2></td></tr>
 <tr class="memitem:a0572860903e918c4c3f3706bfab321d2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structcarte__liste.html">carte_liste</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bdd_8c.html#a0572860903e918c4c3f3706bfab321d2">air_bdd_liste_recherche_attaquants</a> (<a class="el" href="structcarte__liste.html">carte_liste</a> *l, <a class="el" href="structcarte.html">carte</a> *c)</td></tr>
 <tr class="memdesc:a0572860903e918c4c3f3706bfab321d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne la liste des cartes pouvant attaquer la carte <code>c</code>  <a href="#a0572860903e918c4c3f3706bfab321d2">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a0572860903e918c4c3f3706bfab321d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f800054489e50ab8b51e876590b56df"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bdd_8c.html#a4f800054489e50ab8b51e876590b56df">air_bdd_liste_printf</a> (<a class="el" href="structcarte__liste.html">carte_liste</a> *l)</td></tr>
+<tr class="memdesc:a4f800054489e50ab8b51e876590b56df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche une liste de cartes sur la sortie standard.  <a href="#a4f800054489e50ab8b51e876590b56df">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a4f800054489e50ab8b51e876590b56df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>Fonctions de base de données. </p>
@@ -309,6 +313,30 @@ Fonctions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd>-1 en cas d'erreur (voir errno), 0 sinon </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a4f800054489e50ab8b51e876590b56df"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void air_bdd_liste_printf </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structcarte__liste.html">carte_liste</a> *&#160;</td>
+          <td class="paramname"><em>l</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Affiche une liste de cartes sur la sortie standard. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">l</td><td>La liste à afficher </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
