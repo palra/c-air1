@@ -1,11 +1,14 @@
 #include <stdio.h>
 #include "carte.h"
+#include "bdd.h"
 
 #define EOL() printf("\n")
 
 int main()
 {
 	printf("AIR 1 : Jeu de Cartes\n=====================\n\n");
+
+	carte_liste *liste = air_bdd_liste_creer();
 
 	carte *c1 = air_carte_creer(),
 		  *c2 = air_carte_creer(),
@@ -23,6 +26,10 @@ int main()
 	air_carte_enseigne_set(c2, cePique);
 	air_carte_enseigne_set(c3, ceCoeur);
 
+	air_bdd_liste_ajouter(liste, c1);
+	air_bdd_liste_ajouter(liste, c2);
+	air_bdd_liste_ajouter(liste, c3);
+
 
 	printf("c1 : \n");
 	air_carte_printf(c1); EOL();
@@ -32,6 +39,8 @@ int main()
 
 	printf("c3 : \n");
 	air_carte_printf(c3); EOL();
+
+	air_bdd_liste_free(liste);
 
 	air_carte_free(c1);
 	air_carte_free(c2);
