@@ -1,0 +1,421 @@
+\hypertarget{carte_8h}{}\section{Référence du fichier src/carte.h}
+\label{carte_8h}\index{src/carte.\+h@{src/carte.\+h}}
+
+
+Définition des fonctions et types de cartes.  
+
+
+{\ttfamily \#include $<$stdbool.\+h$>$}\\*
+Graphe des dépendances par inclusion de carte.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=143pt]{carte_8h__incl}
+\end{center}
+\end{figure}
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=257pt]{carte_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Structures de données}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structcarte}{carte}
+\item 
+struct \hyperlink{structcarte__prop}{carte\+\_\+prop}
+\end{DoxyCompactItemize}
+\subsection*{Énumérations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{carte_8h_a2b6a5add5e3db9028dff54f9c1acdde7}{carte\+\_\+enseigne} \{ \\*
+{\bfseries ce\+Null} = 0, 
+{\bfseries ce\+Pique}, 
+{\bfseries ce\+Carreau}, 
+{\bfseries ce\+Coeur}, 
+\\*
+{\bfseries ce\+Trefle}
+ \}
+\item 
+enum \hyperlink{carte_8h_a323916cdb68cd0d5d8a1660ffb45ea4e}{carte\+\_\+valeur} \{ \\*
+{\bfseries cv\+Null} = 0, 
+{\bfseries cv\+As}, 
+{\bfseries cv2}, 
+{\bfseries cv3}, 
+\\*
+{\bfseries cv4}, 
+{\bfseries cv5}, 
+{\bfseries cv6}, 
+{\bfseries cv7}, 
+\\*
+{\bfseries cv8}, 
+{\bfseries cv9}, 
+{\bfseries cv10}, 
+{\bfseries cv\+Valet}, 
+\\*
+{\bfseries cv\+Dame}, 
+{\bfseries cv\+Roi}
+ \}
+\item 
+enum \hyperlink{carte_8h_a71a2818c25230a5e1a239f28c1e6deba}{carte\+\_\+prop\+\_\+type} \{ {\bfseries cpt\+Enseigne}, 
+{\bfseries cpt\+Valeur}, 
+{\bfseries cpt\+Peut\+Battre}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structcarte__prop}{carte\+\_\+prop} $\ast$ \hyperlink{carte_8h_a49c3910a75cd95f3f2868811d6d10500}{air\+\_\+carte\+\_\+prop\+\_\+find\+\_\+type} (\hyperlink{structcarte__prop}{carte\+\_\+prop} $\ast$ptr, enum \hyperlink{carte_8h_a71a2818c25230a5e1a239f28c1e6deba}{carte\+\_\+prop\+\_\+type} type)
+\begin{DoxyCompactList}\small\item\em Recherche la première propriété de type {\ttfamily type} dans la chaîne des propriétés d\textquotesingle{}une carte donnée. \end{DoxyCompactList}\item 
+\hyperlink{structcarte__prop}{carte\+\_\+prop} $\ast$ \hyperlink{carte_8h_a3de298787ae5ff81eaf9b16caa6e2578}{air\+\_\+carte\+\_\+prop\+\_\+creer} ()
+\begin{DoxyCompactList}\small\item\em Alloue la mémoire pour une \hyperlink{structcarte__prop}{carte\+\_\+prop} et l\textquotesingle{}initialise. \end{DoxyCompactList}\item 
+int \hyperlink{carte_8h_ab931f47e29ed5f74a4b24f35503af391}{air\+\_\+carte\+\_\+prop\+\_\+ajouter} (\hyperlink{structcarte}{carte} $\ast$c, \hyperlink{structcarte__prop}{carte\+\_\+prop} $\ast$p)
+\begin{DoxyCompactList}\small\item\em Ajoute une propriété à la carte. \end{DoxyCompactList}\item 
+int \hyperlink{carte_8h_a1841a8f25ee0e8f4ee53f84b383772e4}{air\+\_\+carte\+\_\+prop\+\_\+init} (\hyperlink{structcarte__prop}{carte\+\_\+prop} $\ast$p)
+\begin{DoxyCompactList}\small\item\em Initialise une \hyperlink{structcarte__prop}{carte\+\_\+prop}. \end{DoxyCompactList}\item 
+\hyperlink{structcarte}{carte} $\ast$ \hyperlink{carte_8h_a3f348e02674aa3eefa118a2d1be7b77c}{air\+\_\+carte\+\_\+creer} ()
+\begin{DoxyCompactList}\small\item\em Alloue dynamiquement une carte et l\textquotesingle{}initialise. \end{DoxyCompactList}\item 
+void \hyperlink{carte_8h_a45274a3996ff9bed9e3d6e978655a1d4}{air\+\_\+carte\+\_\+free} (\hyperlink{structcarte}{carte} $\ast$c)
+\begin{DoxyCompactList}\small\item\em Libère de la mémoire une carte. \end{DoxyCompactList}\item 
+int \hyperlink{carte_8h_aca47330fc7b74166365ab3aea4d303a1}{air\+\_\+carte\+\_\+init} (\hyperlink{structcarte}{carte} $\ast$c)
+\begin{DoxyCompactList}\small\item\em Initialise la structure. \end{DoxyCompactList}\item 
+enum \hyperlink{carte_8h_a323916cdb68cd0d5d8a1660ffb45ea4e}{carte\+\_\+valeur} \hyperlink{carte_8h_ab411344f241870ba183d6c5db6c4898b}{air\+\_\+carte\+\_\+valeur\+\_\+get} (\hyperlink{structcarte}{carte} $\ast$c)
+\begin{DoxyCompactList}\small\item\em Retourne la valeur d\textquotesingle{}une carte. \end{DoxyCompactList}\item 
+int \hyperlink{carte_8h_addfb4cc8cdc67446e1fb2434bdbec2d0}{air\+\_\+carte\+\_\+valeur\+\_\+set} (\hyperlink{structcarte}{carte} $\ast$c, enum \hyperlink{carte_8h_a323916cdb68cd0d5d8a1660ffb45ea4e}{carte\+\_\+valeur} valeur)
+\begin{DoxyCompactList}\small\item\em Affecte la valeur {\ttfamily valeur} à la carte. \end{DoxyCompactList}\item 
+enum \hyperlink{carte_8h_a2b6a5add5e3db9028dff54f9c1acdde7}{carte\+\_\+enseigne} \hyperlink{carte_8h_a7dad267d5ce0603d60ddd72230aadc46}{air\+\_\+carte\+\_\+enseigne\+\_\+get} (\hyperlink{structcarte}{carte} $\ast$c)
+\begin{DoxyCompactList}\small\item\em Retourne l\textquotesingle{}enseigne d\textquotesingle{}une carte. \end{DoxyCompactList}\item 
+int \hyperlink{carte_8h_ad4dda778eb53e034326b558828cf2a40}{air\+\_\+carte\+\_\+enseigne\+\_\+set} (\hyperlink{structcarte}{carte} $\ast$c, enum \hyperlink{carte_8h_a2b6a5add5e3db9028dff54f9c1acdde7}{carte\+\_\+enseigne} enseigne)
+\begin{DoxyCompactList}\small\item\em Affecte l\textquotesingle{}enseigne {\ttfamily enseigne} à la carte. \end{DoxyCompactList}\item 
+bool \hyperlink{carte_8h_ad7eae524fba5e88efa3d7862655dd8df}{air\+\_\+carte\+\_\+peut\+\_\+battre} (\hyperlink{structcarte}{carte} $\ast$c, \hyperlink{structcarte}{carte} $\ast$peut\+\_\+battre)
+\begin{DoxyCompactList}\small\item\em Vérifie si une carte peut en battre une autre. \end{DoxyCompactList}\item 
+int \hyperlink{carte_8h_a63216eb2cdd6219203225de97f47c251}{air\+\_\+carte\+\_\+bat\+\_\+add} (\hyperlink{structcarte}{carte} $\ast$c, \hyperlink{structcarte}{carte} $\ast$peut\+\_\+battre)
+\begin{DoxyCompactList}\small\item\em Affecte à une carte une référence vers une autre carte. \end{DoxyCompactList}\item 
+void \hyperlink{carte_8h_ac6c44bf3c40f97468e22dcebfb622a6b}{air\+\_\+carte\+\_\+printf} (\hyperlink{structcarte}{carte} $\ast$c)
+\begin{DoxyCompactList}\small\item\em Affiche les propriétés d\textquotesingle{}une carte sur la sortie standard. \end{DoxyCompactList}\item 
+void \hyperlink{carte_8h_ae6ffa5f0d892f4d19b569f4ebc46564e}{air\+\_\+carte\+\_\+affiche\+\_\+valeur} (enum \hyperlink{carte_8h_a323916cdb68cd0d5d8a1660ffb45ea4e}{carte\+\_\+valeur} valeur)
+\begin{DoxyCompactList}\small\item\em Affiche la valeur passée en paramètre dans la sortie standard. \end{DoxyCompactList}\item 
+void \hyperlink{carte_8h_aa5514ebef2fa8a1d26628f153c3768e8}{air\+\_\+carte\+\_\+affiche\+\_\+enseigne} (enum \hyperlink{carte_8h_a2b6a5add5e3db9028dff54f9c1acdde7}{carte\+\_\+enseigne} enseigne)
+\begin{DoxyCompactList}\small\item\em Affiche l\textquotesingle{}enseigne passée en paramètre dans la sortie standard. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Définition des fonctions et types de cartes. 
+
+\begin{DoxyAuthor}{Auteur}
+Loïc Payol \href{mailto:loicpayol@gmail.com}{\tt loicpayol@gmail.\+com} 
+\end{DoxyAuthor}
+
+
+\subsection{Documentation du type de l\textquotesingle{}énumération}
+\index{carte.\+h@{carte.\+h}!carte\+\_\+enseigne@{carte\+\_\+enseigne}}
+\index{carte\+\_\+enseigne@{carte\+\_\+enseigne}!carte.\+h@{carte.\+h}}
+\subsubsection[{\texorpdfstring{carte\+\_\+enseigne}{carte_enseigne}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf carte\+\_\+enseigne}}\hypertarget{carte_8h_a2b6a5add5e3db9028dff54f9c1acdde7}{}\label{carte_8h_a2b6a5add5e3db9028dff54f9c1acdde7}
+Définit les enseigne d\textquotesingle{}une carte \index{carte.\+h@{carte.\+h}!carte\+\_\+prop\+\_\+type@{carte\+\_\+prop\+\_\+type}}
+\index{carte\+\_\+prop\+\_\+type@{carte\+\_\+prop\+\_\+type}!carte.\+h@{carte.\+h}}
+\subsubsection[{\texorpdfstring{carte\+\_\+prop\+\_\+type}{carte_prop_type}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf carte\+\_\+prop\+\_\+type}}\hypertarget{carte_8h_a71a2818c25230a5e1a239f28c1e6deba}{}\label{carte_8h_a71a2818c25230a5e1a239f28c1e6deba}
+Enumération pour le champ discriminant de l\textquotesingle{}union \index{carte.\+h@{carte.\+h}!carte\+\_\+valeur@{carte\+\_\+valeur}}
+\index{carte\+\_\+valeur@{carte\+\_\+valeur}!carte.\+h@{carte.\+h}}
+\subsubsection[{\texorpdfstring{carte\+\_\+valeur}{carte_valeur}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf carte\+\_\+valeur}}\hypertarget{carte_8h_a323916cdb68cd0d5d8a1660ffb45ea4e}{}\label{carte_8h_a323916cdb68cd0d5d8a1660ffb45ea4e}
+Définit les valeurs d\textquotesingle{}une carte 
+
+\subsection{Documentation des fonctions}
+\index{carte.\+h@{carte.\+h}!air\+\_\+carte\+\_\+affiche\+\_\+enseigne@{air\+\_\+carte\+\_\+affiche\+\_\+enseigne}}
+\index{air\+\_\+carte\+\_\+affiche\+\_\+enseigne@{air\+\_\+carte\+\_\+affiche\+\_\+enseigne}!carte.\+h@{carte.\+h}}
+\subsubsection[{\texorpdfstring{air\+\_\+carte\+\_\+affiche\+\_\+enseigne(enum carte\+\_\+enseigne enseigne)}{air_carte_affiche_enseigne(enum carte_enseigne enseigne)}}]{\setlength{\rightskip}{0pt plus 5cm}void air\+\_\+carte\+\_\+affiche\+\_\+enseigne (
+\begin{DoxyParamCaption}
+\item[{enum {\bf carte\+\_\+enseigne}}]{enseigne}
+\end{DoxyParamCaption}
+)}\hypertarget{carte_8h_aa5514ebef2fa8a1d26628f153c3768e8}{}\label{carte_8h_aa5514ebef2fa8a1d26628f153c3768e8}
+
+
+Affiche l\textquotesingle{}enseigne passée en paramètre dans la sortie standard. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em valeur} & L\textquotesingle{}enseigne à afficher \\
+\hline
+\end{DoxyParams}
+\index{carte.\+h@{carte.\+h}!air\+\_\+carte\+\_\+affiche\+\_\+valeur@{air\+\_\+carte\+\_\+affiche\+\_\+valeur}}
+\index{air\+\_\+carte\+\_\+affiche\+\_\+valeur@{air\+\_\+carte\+\_\+affiche\+\_\+valeur}!carte.\+h@{carte.\+h}}
+\subsubsection[{\texorpdfstring{air\+\_\+carte\+\_\+affiche\+\_\+valeur(enum carte\+\_\+valeur valeur)}{air_carte_affiche_valeur(enum carte_valeur valeur)}}]{\setlength{\rightskip}{0pt plus 5cm}void air\+\_\+carte\+\_\+affiche\+\_\+valeur (
+\begin{DoxyParamCaption}
+\item[{enum {\bf carte\+\_\+valeur}}]{valeur}
+\end{DoxyParamCaption}
+)}\hypertarget{carte_8h_ae6ffa5f0d892f4d19b569f4ebc46564e}{}\label{carte_8h_ae6ffa5f0d892f4d19b569f4ebc46564e}
+
+
+Affiche la valeur passée en paramètre dans la sortie standard. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em valeur} & La valeur à afficher \\
+\hline
+\end{DoxyParams}
+\index{carte.\+h@{carte.\+h}!air\+\_\+carte\+\_\+bat\+\_\+add@{air\+\_\+carte\+\_\+bat\+\_\+add}}
+\index{air\+\_\+carte\+\_\+bat\+\_\+add@{air\+\_\+carte\+\_\+bat\+\_\+add}!carte.\+h@{carte.\+h}}
+\subsubsection[{\texorpdfstring{air\+\_\+carte\+\_\+bat\+\_\+add(carte $\ast$c, carte $\ast$peut\+\_\+battre)}{air_carte_bat_add(carte *c, carte *peut_battre)}}]{\setlength{\rightskip}{0pt plus 5cm}int air\+\_\+carte\+\_\+bat\+\_\+add (
+\begin{DoxyParamCaption}
+\item[{{\bf carte} $\ast$}]{c, }
+\item[{{\bf carte} $\ast$}]{peut\+\_\+battre}
+\end{DoxyParamCaption}
+)}\hypertarget{carte_8h_a63216eb2cdd6219203225de97f47c251}{}\label{carte_8h_a63216eb2cdd6219203225de97f47c251}
+
+
+Affecte à une carte une référence vers une autre carte. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em c} & L\textquotesingle{}instance de la structure à modifier \\
+\hline
+{\em peut\+\_\+battre} & La carte battue \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+0 lorsqu\textquotesingle{}aucune erreur n\textquotesingle{}a eu lieu, -\/1 quand une erreur a eu lieu (peut\+\_\+battre == N\+U\+LL ou à c) 
+\end{DoxyReturn}
+\index{carte.\+h@{carte.\+h}!air\+\_\+carte\+\_\+creer@{air\+\_\+carte\+\_\+creer}}
+\index{air\+\_\+carte\+\_\+creer@{air\+\_\+carte\+\_\+creer}!carte.\+h@{carte.\+h}}
+\subsubsection[{\texorpdfstring{air\+\_\+carte\+\_\+creer()}{air_carte_creer()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf carte}$\ast$ air\+\_\+carte\+\_\+creer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{carte_8h_a3f348e02674aa3eefa118a2d1be7b77c}{}\label{carte_8h_a3f348e02674aa3eefa118a2d1be7b77c}
+
+
+Alloue dynamiquement une carte et l\textquotesingle{}initialise. 
+
+\begin{DoxyReturn}{Renvoie}
+N\+U\+LL en cas d\textquotesingle{}erreur (voir errno), sinon la carte nouvellement créée 
+\end{DoxyReturn}
+\index{carte.\+h@{carte.\+h}!air\+\_\+carte\+\_\+enseigne\+\_\+get@{air\+\_\+carte\+\_\+enseigne\+\_\+get}}
+\index{air\+\_\+carte\+\_\+enseigne\+\_\+get@{air\+\_\+carte\+\_\+enseigne\+\_\+get}!carte.\+h@{carte.\+h}}
+\subsubsection[{\texorpdfstring{air\+\_\+carte\+\_\+enseigne\+\_\+get(carte $\ast$c)}{air_carte_enseigne_get(carte *c)}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf carte\+\_\+enseigne} air\+\_\+carte\+\_\+enseigne\+\_\+get (
+\begin{DoxyParamCaption}
+\item[{{\bf carte} $\ast$}]{c}
+\end{DoxyParamCaption}
+)}\hypertarget{carte_8h_a7dad267d5ce0603d60ddd72230aadc46}{}\label{carte_8h_a7dad267d5ce0603d60ddd72230aadc46}
+
+
+Retourne l\textquotesingle{}enseigne d\textquotesingle{}une carte. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em c} & La carte \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+L\textquotesingle{}enseigne de la carte 
+\end{DoxyReturn}
+\index{carte.\+h@{carte.\+h}!air\+\_\+carte\+\_\+enseigne\+\_\+set@{air\+\_\+carte\+\_\+enseigne\+\_\+set}}
+\index{air\+\_\+carte\+\_\+enseigne\+\_\+set@{air\+\_\+carte\+\_\+enseigne\+\_\+set}!carte.\+h@{carte.\+h}}
+\subsubsection[{\texorpdfstring{air\+\_\+carte\+\_\+enseigne\+\_\+set(carte $\ast$c, enum carte\+\_\+enseigne enseigne)}{air_carte_enseigne_set(carte *c, enum carte_enseigne enseigne)}}]{\setlength{\rightskip}{0pt plus 5cm}int air\+\_\+carte\+\_\+enseigne\+\_\+set (
+\begin{DoxyParamCaption}
+\item[{{\bf carte} $\ast$}]{c, }
+\item[{enum {\bf carte\+\_\+enseigne}}]{enseigne}
+\end{DoxyParamCaption}
+)}\hypertarget{carte_8h_ad4dda778eb53e034326b558828cf2a40}{}\label{carte_8h_ad4dda778eb53e034326b558828cf2a40}
+
+
+Affecte l\textquotesingle{}enseigne {\ttfamily enseigne} à la carte. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em c} & L\textquotesingle{}instance de la structure à modifier \\
+\hline
+{\em enseigne} & L\textquotesingle{}enseigne à affecter \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+0 lorsqu\textquotesingle{}aucune erreur n\textquotesingle{}a eu lieu 
+\end{DoxyReturn}
+\index{carte.\+h@{carte.\+h}!air\+\_\+carte\+\_\+free@{air\+\_\+carte\+\_\+free}}
+\index{air\+\_\+carte\+\_\+free@{air\+\_\+carte\+\_\+free}!carte.\+h@{carte.\+h}}
+\subsubsection[{\texorpdfstring{air\+\_\+carte\+\_\+free(carte $\ast$c)}{air_carte_free(carte *c)}}]{\setlength{\rightskip}{0pt plus 5cm}void air\+\_\+carte\+\_\+free (
+\begin{DoxyParamCaption}
+\item[{{\bf carte} $\ast$}]{c}
+\end{DoxyParamCaption}
+)}\hypertarget{carte_8h_a45274a3996ff9bed9e3d6e978655a1d4}{}\label{carte_8h_a45274a3996ff9bed9e3d6e978655a1d4}
+
+
+Libère de la mémoire une carte. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em c} & La carte à libérer de la mémoire \\
+\hline
+\end{DoxyParams}
+\index{carte.\+h@{carte.\+h}!air\+\_\+carte\+\_\+init@{air\+\_\+carte\+\_\+init}}
+\index{air\+\_\+carte\+\_\+init@{air\+\_\+carte\+\_\+init}!carte.\+h@{carte.\+h}}
+\subsubsection[{\texorpdfstring{air\+\_\+carte\+\_\+init(carte $\ast$c)}{air_carte_init(carte *c)}}]{\setlength{\rightskip}{0pt plus 5cm}int air\+\_\+carte\+\_\+init (
+\begin{DoxyParamCaption}
+\item[{{\bf carte} $\ast$}]{c}
+\end{DoxyParamCaption}
+)}\hypertarget{carte_8h_aca47330fc7b74166365ab3aea4d303a1}{}\label{carte_8h_aca47330fc7b74166365ab3aea4d303a1}
+
+
+Initialise la structure. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em c} & L\textquotesingle{}instance de la structure à initialiser \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+0 lorsqu\textquotesingle{}aucune erreur n\textquotesingle{}a eu lieu 
+\end{DoxyReturn}
+\index{carte.\+h@{carte.\+h}!air\+\_\+carte\+\_\+peut\+\_\+battre@{air\+\_\+carte\+\_\+peut\+\_\+battre}}
+\index{air\+\_\+carte\+\_\+peut\+\_\+battre@{air\+\_\+carte\+\_\+peut\+\_\+battre}!carte.\+h@{carte.\+h}}
+\subsubsection[{\texorpdfstring{air\+\_\+carte\+\_\+peut\+\_\+battre(carte $\ast$c, carte $\ast$peut\+\_\+battre)}{air_carte_peut_battre(carte *c, carte *peut_battre)}}]{\setlength{\rightskip}{0pt plus 5cm}bool air\+\_\+carte\+\_\+peut\+\_\+battre (
+\begin{DoxyParamCaption}
+\item[{{\bf carte} $\ast$}]{c, }
+\item[{{\bf carte} $\ast$}]{peut\+\_\+battre}
+\end{DoxyParamCaption}
+)}\hypertarget{carte_8h_ad7eae524fba5e88efa3d7862655dd8df}{}\label{carte_8h_ad7eae524fba5e88efa3d7862655dd8df}
+
+
+Vérifie si une carte peut en battre une autre. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em c} & La carte \char`\"{}attaquante\char`\"{} \\
+\hline
+{\em peut\+\_\+battre} & La carte \char`\"{}attaquée\char`\"{} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+true si la carte attaquante peut la battre, false sinon 
+\end{DoxyReturn}
+\index{carte.\+h@{carte.\+h}!air\+\_\+carte\+\_\+printf@{air\+\_\+carte\+\_\+printf}}
+\index{air\+\_\+carte\+\_\+printf@{air\+\_\+carte\+\_\+printf}!carte.\+h@{carte.\+h}}
+\subsubsection[{\texorpdfstring{air\+\_\+carte\+\_\+printf(carte $\ast$c)}{air_carte_printf(carte *c)}}]{\setlength{\rightskip}{0pt plus 5cm}void air\+\_\+carte\+\_\+printf (
+\begin{DoxyParamCaption}
+\item[{{\bf carte} $\ast$}]{c}
+\end{DoxyParamCaption}
+)}\hypertarget{carte_8h_ac6c44bf3c40f97468e22dcebfb622a6b}{}\label{carte_8h_ac6c44bf3c40f97468e22dcebfb622a6b}
+
+
+Affiche les propriétés d\textquotesingle{}une carte sur la sortie standard. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em c} & La carte à afficher \\
+\hline
+\end{DoxyParams}
+\index{carte.\+h@{carte.\+h}!air\+\_\+carte\+\_\+prop\+\_\+ajouter@{air\+\_\+carte\+\_\+prop\+\_\+ajouter}}
+\index{air\+\_\+carte\+\_\+prop\+\_\+ajouter@{air\+\_\+carte\+\_\+prop\+\_\+ajouter}!carte.\+h@{carte.\+h}}
+\subsubsection[{\texorpdfstring{air\+\_\+carte\+\_\+prop\+\_\+ajouter(carte $\ast$c, carte\+\_\+prop $\ast$p)}{air_carte_prop_ajouter(carte *c, carte_prop *p)}}]{\setlength{\rightskip}{0pt plus 5cm}int air\+\_\+carte\+\_\+prop\+\_\+ajouter (
+\begin{DoxyParamCaption}
+\item[{{\bf carte} $\ast$}]{c, }
+\item[{{\bf carte\+\_\+prop} $\ast$}]{p}
+\end{DoxyParamCaption}
+)}\hypertarget{carte_8h_ab931f47e29ed5f74a4b24f35503af391}{}\label{carte_8h_ab931f47e29ed5f74a4b24f35503af391}
+
+
+Ajoute une propriété à la carte. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em c} & La carte à modifier \\
+\hline
+{\em p} & La propriété à ajouter \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+0 lorsqu\textquotesingle{}aucune erreur n\textquotesingle{}a eu lieu 
+\end{DoxyReturn}
+\index{carte.\+h@{carte.\+h}!air\+\_\+carte\+\_\+prop\+\_\+creer@{air\+\_\+carte\+\_\+prop\+\_\+creer}}
+\index{air\+\_\+carte\+\_\+prop\+\_\+creer@{air\+\_\+carte\+\_\+prop\+\_\+creer}!carte.\+h@{carte.\+h}}
+\subsubsection[{\texorpdfstring{air\+\_\+carte\+\_\+prop\+\_\+creer()}{air_carte_prop_creer()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf carte\+\_\+prop}$\ast$ air\+\_\+carte\+\_\+prop\+\_\+creer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{carte_8h_a3de298787ae5ff81eaf9b16caa6e2578}{}\label{carte_8h_a3de298787ae5ff81eaf9b16caa6e2578}
+
+
+Alloue la mémoire pour une \hyperlink{structcarte__prop}{carte\+\_\+prop} et l\textquotesingle{}initialise. 
+
+\begin{DoxyReturn}{Renvoie}
+N\+U\+LL en cas d\textquotesingle{}erreur (voir errno), sinon la prorpiété nouvellement créée 
+\end{DoxyReturn}
+\index{carte.\+h@{carte.\+h}!air\+\_\+carte\+\_\+prop\+\_\+find\+\_\+type@{air\+\_\+carte\+\_\+prop\+\_\+find\+\_\+type}}
+\index{air\+\_\+carte\+\_\+prop\+\_\+find\+\_\+type@{air\+\_\+carte\+\_\+prop\+\_\+find\+\_\+type}!carte.\+h@{carte.\+h}}
+\subsubsection[{\texorpdfstring{air\+\_\+carte\+\_\+prop\+\_\+find\+\_\+type(carte\+\_\+prop $\ast$ptr, enum carte\+\_\+prop\+\_\+type type)}{air_carte_prop_find_type(carte_prop *ptr, enum carte_prop_type type)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf carte\+\_\+prop}$\ast$ air\+\_\+carte\+\_\+prop\+\_\+find\+\_\+type (
+\begin{DoxyParamCaption}
+\item[{{\bf carte\+\_\+prop} $\ast$}]{ptr, }
+\item[{enum {\bf carte\+\_\+prop\+\_\+type}}]{type}
+\end{DoxyParamCaption}
+)}\hypertarget{carte_8h_a49c3910a75cd95f3f2868811d6d10500}{}\label{carte_8h_a49c3910a75cd95f3f2868811d6d10500}
+
+
+Recherche la première propriété de type {\ttfamily type} dans la chaîne des propriétés d\textquotesingle{}une carte donnée. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em ptr} & La propriété à partir de laquelle effectuer la recherche \\
+\hline
+{\em type} & Le type à rechercher \\
+\hline
+\end{DoxyParams}
+\index{carte.\+h@{carte.\+h}!air\+\_\+carte\+\_\+prop\+\_\+init@{air\+\_\+carte\+\_\+prop\+\_\+init}}
+\index{air\+\_\+carte\+\_\+prop\+\_\+init@{air\+\_\+carte\+\_\+prop\+\_\+init}!carte.\+h@{carte.\+h}}
+\subsubsection[{\texorpdfstring{air\+\_\+carte\+\_\+prop\+\_\+init(carte\+\_\+prop $\ast$p)}{air_carte_prop_init(carte_prop *p)}}]{\setlength{\rightskip}{0pt plus 5cm}int air\+\_\+carte\+\_\+prop\+\_\+init (
+\begin{DoxyParamCaption}
+\item[{{\bf carte\+\_\+prop} $\ast$}]{p}
+\end{DoxyParamCaption}
+)}\hypertarget{carte_8h_a1841a8f25ee0e8f4ee53f84b383772e4}{}\label{carte_8h_a1841a8f25ee0e8f4ee53f84b383772e4}
+
+
+Initialise une \hyperlink{structcarte__prop}{carte\+\_\+prop}. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p} & La propriété à initialiser \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+0 lorsqu\textquotesingle{}aucune erreur n\textquotesingle{}a eu lieu 
+\end{DoxyReturn}
+\index{carte.\+h@{carte.\+h}!air\+\_\+carte\+\_\+valeur\+\_\+get@{air\+\_\+carte\+\_\+valeur\+\_\+get}}
+\index{air\+\_\+carte\+\_\+valeur\+\_\+get@{air\+\_\+carte\+\_\+valeur\+\_\+get}!carte.\+h@{carte.\+h}}
+\subsubsection[{\texorpdfstring{air\+\_\+carte\+\_\+valeur\+\_\+get(carte $\ast$c)}{air_carte_valeur_get(carte *c)}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf carte\+\_\+valeur} air\+\_\+carte\+\_\+valeur\+\_\+get (
+\begin{DoxyParamCaption}
+\item[{{\bf carte} $\ast$}]{c}
+\end{DoxyParamCaption}
+)}\hypertarget{carte_8h_ab411344f241870ba183d6c5db6c4898b}{}\label{carte_8h_ab411344f241870ba183d6c5db6c4898b}
+
+
+Retourne la valeur d\textquotesingle{}une carte. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em c} & La carte \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+La valeur de la carte 
+\end{DoxyReturn}
+\index{carte.\+h@{carte.\+h}!air\+\_\+carte\+\_\+valeur\+\_\+set@{air\+\_\+carte\+\_\+valeur\+\_\+set}}
+\index{air\+\_\+carte\+\_\+valeur\+\_\+set@{air\+\_\+carte\+\_\+valeur\+\_\+set}!carte.\+h@{carte.\+h}}
+\subsubsection[{\texorpdfstring{air\+\_\+carte\+\_\+valeur\+\_\+set(carte $\ast$c, enum carte\+\_\+valeur valeur)}{air_carte_valeur_set(carte *c, enum carte_valeur valeur)}}]{\setlength{\rightskip}{0pt plus 5cm}int air\+\_\+carte\+\_\+valeur\+\_\+set (
+\begin{DoxyParamCaption}
+\item[{{\bf carte} $\ast$}]{c, }
+\item[{enum {\bf carte\+\_\+valeur}}]{valeur}
+\end{DoxyParamCaption}
+)}\hypertarget{carte_8h_addfb4cc8cdc67446e1fb2434bdbec2d0}{}\label{carte_8h_addfb4cc8cdc67446e1fb2434bdbec2d0}
+
+
+Affecte la valeur {\ttfamily valeur} à la carte. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em c} & L\textquotesingle{}instance de la structure à modifier \\
+\hline
+{\em valeur} & La valeur à affecter \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+0 lorsqu\textquotesingle{}aucune erreur n\textquotesingle{}a eu lieu 
+\end{DoxyReturn}
