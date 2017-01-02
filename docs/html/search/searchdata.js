@@ -1,11 +1,12 @@
 var indexSectionsWithContent =
 {
-  0: "abcdps",
+  0: "abcdepstv",
   1: "c",
   2: "bc",
   3: "a",
-  4: "cdps",
-  5: "c"
+  4: "cdepstv",
+  5: "c",
+  6: "c"
 };
 
 var indexSectionNames =
@@ -15,7 +16,8 @@ var indexSectionNames =
   2: "files",
   3: "functions",
   4: "variables",
-  5: "enums"
+  5: "enums",
+  6: "enumvalues"
 };
 
 var indexSectionLabels =
@@ -25,6 +27,7 @@ var indexSectionLabels =
   2: "Fichiers",
   3: "Fonctions",
   4: "Variables",
-  5: "Énumérations"
+  5: "Énumérations",
+  6: "Valeurs énumérées"
 };
 

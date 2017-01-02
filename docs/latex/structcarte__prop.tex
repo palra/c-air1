@@ -2,11 +2,17 @@
 \label{structcarte__prop}\index{carte\+\_\+prop@{carte\+\_\+prop}}
 
 
+Définit une propriété d\textquotesingle{}une carte.  
+
+
+
+
 {\ttfamily \#include $<$carte.\+h$>$}
 
 
 
-Graphe de collaboration de carte\+\_\+prop\+:\nopagebreak
+Graphe de collaboration de carte\+\_\+prop\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -19,23 +25,39 @@ Graphe de collaboration de carte\+\_\+prop\+:\nopagebreak
 \begin{tabbing}
 xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
 union \{\\
-\>enum \hyperlink{carte_8h_a2b6a5add5e3db9028dff54f9c1acdde7}{carte\_enseigne} {\bfseries enseigne}\\
-\>enum \hyperlink{carte_8h_a323916cdb68cd0d5d8a1660ffb45ea4e}{carte\_valeur} {\bfseries valeur}\\
-\>\hyperlink{structcarte}{carte} $\ast$ {\bfseries peut\_battre}\\
+\>enum \hyperlink{carte_8h_a2b6a5add5e3db9028dff54f9c1acdde7}{carte\_enseigne} \hyperlink{structcarte__prop_aa01631e22730e71acdae17bec74fcdd3}{enseigne}\\
+\>enum \hyperlink{carte_8h_a323916cdb68cd0d5d8a1660ffb45ea4e}{carte\_valeur} \hyperlink{structcarte__prop_a8069caea55ffab4bbdbb27b9d2b1c651}{valeur}\\
+\>\hyperlink{structcarte}{carte} $\ast$ \hyperlink{structcarte__prop_a23cb7c2805cd6c447786465937cb0255}{peut\_battre}\\
 \} {\bfseries val}\hypertarget{structcarte__prop_a36e90757d299ff149c6884f54e18e84b}{}\label{structcarte__prop_a36e90757d299ff149c6884f54e18e84b}
 \\
 
 \end{tabbing}\item 
-enum \hyperlink{carte_8h_a71a2818c25230a5e1a239f28c1e6deba}{carte\+\_\+prop\+\_\+type} {\bfseries type}\hypertarget{structcarte__prop_a434a5fe3ac234b8886126c4ea9acf243}{}\label{structcarte__prop_a434a5fe3ac234b8886126c4ea9acf243}
-
+enum \hyperlink{carte_8h_a71a2818c25230a5e1a239f28c1e6deba}{carte\+\_\+prop\+\_\+type} \hyperlink{structcarte__prop_a434a5fe3ac234b8886126c4ea9acf243}{type}
 \item 
-struct \hyperlink{structcarte__prop}{carte\+\_\+prop} $\ast$ {\bfseries suiv}\hypertarget{structcarte__prop_a0cb42544111674aa11728c2b7392a661}{}\label{structcarte__prop_a0cb42544111674aa11728c2b7392a661}
-
+struct \hyperlink{structcarte__prop}{carte\+\_\+prop} $\ast$ \hyperlink{structcarte__prop_a0cb42544111674aa11728c2b7392a661}{suiv}
 \end{DoxyCompactItemize}
 
 
 \subsection{Description détaillée}
-Définit une propriété d\textquotesingle{}une carte 
+Définit une propriété d\textquotesingle{}une carte. 
+
+\subsection{Documentation des champs}
+\index{carte\+\_\+prop@{carte\+\_\+prop}!enseigne@{enseigne}}
+\index{enseigne@{enseigne}!carte\+\_\+prop@{carte\+\_\+prop}}
+\subsubsection[{\texorpdfstring{enseigne}{enseigne}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf carte\+\_\+enseigne} carte\+\_\+prop\+::enseigne}\hypertarget{structcarte__prop_aa01631e22730e71acdae17bec74fcdd3}{}\label{structcarte__prop_aa01631e22730e71acdae17bec74fcdd3}
+Enseigne d\textquotesingle{}une carte (pique, carreaux ...) \index{carte\+\_\+prop@{carte\+\_\+prop}!peut\+\_\+battre@{peut\+\_\+battre}}
+\index{peut\+\_\+battre@{peut\+\_\+battre}!carte\+\_\+prop@{carte\+\_\+prop}}
+\subsubsection[{\texorpdfstring{peut\+\_\+battre}{peut_battre}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf carte}$\ast$ carte\+\_\+prop\+::peut\+\_\+battre}\hypertarget{structcarte__prop_a23cb7c2805cd6c447786465937cb0255}{}\label{structcarte__prop_a23cb7c2805cd6c447786465937cb0255}
+Pointeur vers une carte que la carte courante peut battre \index{carte\+\_\+prop@{carte\+\_\+prop}!suiv@{suiv}}
+\index{suiv@{suiv}!carte\+\_\+prop@{carte\+\_\+prop}}
+\subsubsection[{\texorpdfstring{suiv}{suiv}}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf carte\+\_\+prop}$\ast$ carte\+\_\+prop\+::suiv}\hypertarget{structcarte__prop_a0cb42544111674aa11728c2b7392a661}{}\label{structcarte__prop_a0cb42544111674aa11728c2b7392a661}
+Pointeur vers la propriété suivante \index{carte\+\_\+prop@{carte\+\_\+prop}!type@{type}}
+\index{type@{type}!carte\+\_\+prop@{carte\+\_\+prop}}
+\subsubsection[{\texorpdfstring{type}{type}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf carte\+\_\+prop\+\_\+type} carte\+\_\+prop\+::type}\hypertarget{structcarte__prop_a434a5fe3ac234b8886126c4ea9acf243}{}\label{structcarte__prop_a434a5fe3ac234b8886126c4ea9acf243}
+Champ discriminant pour savoir quel champ de l\textquotesingle{}union lire \index{carte\+\_\+prop@{carte\+\_\+prop}!valeur@{valeur}}
+\index{valeur@{valeur}!carte\+\_\+prop@{carte\+\_\+prop}}
+\subsubsection[{\texorpdfstring{valeur}{valeur}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf carte\+\_\+valeur} carte\+\_\+prop\+::valeur}\hypertarget{structcarte__prop_a8069caea55ffab4bbdbb27b9d2b1c651}{}\label{structcarte__prop_a8069caea55ffab4bbdbb27b9d2b1c651}
+Valeur (2, 3, as, roi ...) 
 
 La documentation de cette structure a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
 \item 

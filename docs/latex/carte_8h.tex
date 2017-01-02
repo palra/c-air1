@@ -24,9 +24,9 @@ Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier
 \begin{DoxyCompactItemize}
 \item 
 struct \hyperlink{structcarte}{carte}
-\item 
+\begin{DoxyCompactList}\small\item\em Définit une carte. \end{DoxyCompactList}\item 
 struct \hyperlink{structcarte__prop}{carte\+\_\+prop}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Définit une propriété d\textquotesingle{}une carte. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Énumérations}
 \begin{DoxyCompactItemize}
 \item 
@@ -37,10 +37,11 @@ enum \hyperlink{carte_8h_a2b6a5add5e3db9028dff54f9c1acdde7}{carte\+\_\+enseigne}
 {\bfseries ce\+Coeur}, 
 \\*
 {\bfseries ce\+Trefle}
- \}
+ \}\hypertarget{carte_8h_a2b6a5add5e3db9028dff54f9c1acdde7}{}\label{carte_8h_a2b6a5add5e3db9028dff54f9c1acdde7}
+\begin{DoxyCompactList}\small\item\em Définit les enseigne d\textquotesingle{}une carte. \end{DoxyCompactList}
 \item 
 enum \hyperlink{carte_8h_a323916cdb68cd0d5d8a1660ffb45ea4e}{carte\+\_\+valeur} \{ \\*
-{\bfseries cv\+Null} = 0, 
+\hyperlink{carte_8h_a323916cdb68cd0d5d8a1660ffb45ea4ea2a6758a6a33a3886fc1c24e5aee7fe7e}{cv\+Null} = 0, 
 {\bfseries cv\+As}, 
 {\bfseries cv2}, 
 {\bfseries cv3}, 
@@ -57,12 +58,12 @@ enum \hyperlink{carte_8h_a323916cdb68cd0d5d8a1660ffb45ea4e}{carte\+\_\+valeur} \
 \\*
 {\bfseries cv\+Dame}, 
 {\bfseries cv\+Roi}
- \}
+ \}\begin{DoxyCompactList}\small\item\em Définit les valeurs d\textquotesingle{}une carte. \end{DoxyCompactList}
 \item 
 enum \hyperlink{carte_8h_a71a2818c25230a5e1a239f28c1e6deba}{carte\+\_\+prop\+\_\+type} \{ {\bfseries cpt\+Enseigne}, 
 {\bfseries cpt\+Valeur}, 
-{\bfseries cpt\+Peut\+Battre}
- \}
+\hyperlink{carte_8h_a71a2818c25230a5e1a239f28c1e6debaae75e69e2e716af470353d07f4b3b9fd0}{cpt\+Peut\+Battre}
+ \}\begin{DoxyCompactList}\small\item\em Enumération pour le champ discriminant de l\textquotesingle{}union. \end{DoxyCompactList}
 \end{DoxyCompactItemize}
 \subsection*{Fonctions}
 \begin{DoxyCompactItemize}
@@ -110,16 +111,35 @@ Loïc Payol \href{mailto:loicpayol@gmail.com}{\tt loicpayol@gmail.\+com}
 
 
 \subsection{Documentation du type de l\textquotesingle{}énumération}
-\index{carte.\+h@{carte.\+h}!carte\+\_\+enseigne@{carte\+\_\+enseigne}}
-\index{carte\+\_\+enseigne@{carte\+\_\+enseigne}!carte.\+h@{carte.\+h}}
-\subsubsection[{\texorpdfstring{carte\+\_\+enseigne}{carte_enseigne}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf carte\+\_\+enseigne}}\hypertarget{carte_8h_a2b6a5add5e3db9028dff54f9c1acdde7}{}\label{carte_8h_a2b6a5add5e3db9028dff54f9c1acdde7}
-Définit les enseigne d\textquotesingle{}une carte \index{carte.\+h@{carte.\+h}!carte\+\_\+prop\+\_\+type@{carte\+\_\+prop\+\_\+type}}
+\index{carte.\+h@{carte.\+h}!carte\+\_\+prop\+\_\+type@{carte\+\_\+prop\+\_\+type}}
 \index{carte\+\_\+prop\+\_\+type@{carte\+\_\+prop\+\_\+type}!carte.\+h@{carte.\+h}}
 \subsubsection[{\texorpdfstring{carte\+\_\+prop\+\_\+type}{carte_prop_type}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf carte\+\_\+prop\+\_\+type}}\hypertarget{carte_8h_a71a2818c25230a5e1a239f28c1e6deba}{}\label{carte_8h_a71a2818c25230a5e1a239f28c1e6deba}
-Enumération pour le champ discriminant de l\textquotesingle{}union \index{carte.\+h@{carte.\+h}!carte\+\_\+valeur@{carte\+\_\+valeur}}
+
+
+Enumération pour le champ discriminant de l\textquotesingle{}union. 
+
+\begin{Desc}
+\item[Valeurs énumérées]\par
+\begin{description}
+\index{cpt\+Peut\+Battre@{cpt\+Peut\+Battre}!carte.\+h@{carte.\+h}}\index{carte.\+h@{carte.\+h}!cpt\+Peut\+Battre@{cpt\+Peut\+Battre}}\item[{\em 
+cpt\+Peut\+Battre\hypertarget{carte_8h_a71a2818c25230a5e1a239f28c1e6debaae75e69e2e716af470353d07f4b3b9fd0}{}\label{carte_8h_a71a2818c25230a5e1a239f28c1e6debaae75e69e2e716af470353d07f4b3b9fd0}
+}]Permet d\textquotesingle{}indiquer qu\textquotesingle{}une carte peut en battre une autre \end{description}
+\end{Desc}
+\index{carte.\+h@{carte.\+h}!carte\+\_\+valeur@{carte\+\_\+valeur}}
 \index{carte\+\_\+valeur@{carte\+\_\+valeur}!carte.\+h@{carte.\+h}}
 \subsubsection[{\texorpdfstring{carte\+\_\+valeur}{carte_valeur}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf carte\+\_\+valeur}}\hypertarget{carte_8h_a323916cdb68cd0d5d8a1660ffb45ea4e}{}\label{carte_8h_a323916cdb68cd0d5d8a1660ffb45ea4e}
-Définit les valeurs d\textquotesingle{}une carte 
+
+
+Définit les valeurs d\textquotesingle{}une carte. 
+
+\begin{Desc}
+\item[Valeurs énumérées]\par
+\begin{description}
+\index{cv\+Null@{cv\+Null}!carte.\+h@{carte.\+h}}\index{carte.\+h@{carte.\+h}!cv\+Null@{cv\+Null}}\item[{\em 
+cv\+Null\hypertarget{carte_8h_a323916cdb68cd0d5d8a1660ffb45ea4ea2a6758a6a33a3886fc1c24e5aee7fe7e}{}\label{carte_8h_a323916cdb68cd0d5d8a1660ffb45ea4ea2a6758a6a33a3886fc1c24e5aee7fe7e}
+}]Permet de renvoyer une valeur nulle \end{description}
+\end{Desc}
+
 
 \subsection{Documentation des fonctions}
 \index{carte.\+h@{carte.\+h}!air\+\_\+carte\+\_\+affiche\+\_\+enseigne@{air\+\_\+carte\+\_\+affiche\+\_\+enseigne}}
