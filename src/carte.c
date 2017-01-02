@@ -6,21 +6,20 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-#include <string.h>
 #include <errno.h>
 #include "carte.h"
 
 /**
  * \fn carte* air_carte_creer()
  * \brief Alloue dynamiquement une carte et l'initialise
- * \return La carte nouvellement crée
+ * \return NULL en cas d'erreur (voir errno), sinon la carte nouvellement
+ *         créée
  */
 carte* air_carte_creer()
 {
 	carte *c = malloc(sizeof(carte));
 	if(c == NULL) {
-		fprintf(stderr, "%s\n", strerror(errno));
-		exit(errno);
+		return NULL;
 	}
 
 	air_carte_init(c);
@@ -47,14 +46,14 @@ void air_carte_free(carte *c)
 /**
  * \fn carte_prop* air_carte_prop_creer()
  * \brief Alloue la mémoire pour une carte_prop et l'initialise
- * \return la prorpiété nouvellement crée
+ * \return NULL en cas d'erreur (voir errno), sinon la prorpiété nouvellement
+ *         créée
  */
 carte_prop* air_carte_prop_creer()
 {
 	carte_prop *prop = malloc(sizeof(carte_prop));
 	if(prop == NULL) {
-		fprintf(stderr, "%s\n", strerror(errno));
-		exit(errno);
+		return NULL;
 	}
 
 	air_carte_prop_init(prop);
@@ -219,6 +218,10 @@ bool air_carte_peut_battre(carte *c, carte *peut_battre)
 	carte_prop *ptr = c->prop;
 	while(ptr != NULL) {
 		ptr = air_carte_prop_find_type(ptr, cptPeutBattre);
+		if(ptr == NULL) {
+			return false;
+		}
+
 		if(ptr->val.peut_battre == peut_battre) {
 			return true;
 		}
